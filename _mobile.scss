@@ -1,0 +1,20 @@
+@media (max-width: 576px) {
+    /* Top Header */
+    .top {
+        height: auto;
+        text-align: center;
+
+        &-language {
+            .languages {
+                position: static;
+                visibility: hidden;
+                opacity: 1;
+                width: 100%;
+                
+                a {
+                    color: $color-2;
+                }
+            }
+        }
+    }
+}

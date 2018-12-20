@@ -1,0 +1,108 @@
+/* Define Font-Family, Font-size, Color */
+/* Color */
+$color-blue-blood: #2c3e50;
+$color: #2c3e50;
+$color-logo: #1abc9c;
+$color-2: #ffffff;
+$color-button: #21303f;
+
+/* Font */
+$font-family-thefox: "Lato", sans-serif;
+$font-size-small: 13px;
+$font-size-medium: 14px;
+$font-size-menu: 15px;
+
+/* Height & Width */
+$height-top: 50px;
+
+/*
+* Style Header
+*/
+body {
+    font-family: $font-family-thefox;
+    font-size: $font-size-small;
+}
+.top {
+  height: $height-top;
+  line-height: $height-top;
+  background-color: $color-blue-blood;
+  color: $color-2;
+
+  &-language {
+    position: relative;
+    // display: inline;
+
+    &:hover {
+      .languages {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    b {
+      cursor: pointer;
+      font-size: $font-size-medium;
+    }
+
+    .languages {
+      position: relative;
+      width: 155px;
+      background-color: $color-blue-blood;
+    //   opacity: 0;
+    //   transition: 0.2s;
+    //   visibility: hidden;
+
+      a {
+        display: block;
+        padding: 3px 12px;
+        color: $color-2;
+        font-size: $font-size-small;
+        line-height: 19px;
+        text-align: center;
+        font-weight: normal;
+      }
+    }
+  }
+  /* End top languages */
+  /* Right */
+  .right {
+      .button {
+        display: inline;
+        a.btn {
+            font-size: $font-size-small;
+            color: $color-2;
+            background-color:$color-button;
+            height: 30px;
+            padding: auto 11px;
+            border: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-right: 15px;
+
+            i {
+                padding-right: 7px;
+            }
+        }
+      }
+      .links {
+          display: inline;
+
+          ul {
+              display: inline;
+
+              li {
+                  display: inline;
+                  list-style: none;
+
+                  a {
+                      color: $color-2;
+                      font-size: $font-size-small;
+                      padding-right: 15px;
+                  }
+              }
+          }
+      }
+  }
+}
+
+@import 'mobile';

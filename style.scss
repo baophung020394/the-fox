@@ -1,26 +1,40 @@
 /* Define Font-Family, Font-size, Color */
+
+/* Logo */
+$logo: "images/logo.png";
+
 /* Color */
 $color-blue-blood: #2c3e50;
 $color: #2c3e50;
 $color-logo: #1abc9c;
 $color-2: #ffffff;
 $color-button: #21303f;
-
+$color-light: #a1b1bc;
+$color-background-gray: #f9fafb;
+$color-border: #eff0f1;
 /* Font */
 $font-family-thefox: "Lato", sans-serif;
 $font-size-small: 13px;
 $font-size-medium: 14px;
 $font-size-menu: 15px;
+$font-size-title: 30px;
 
 /* Height & Width */
 $height-top: 50px;
+$logo-height: 90px;
+$height-title: 120px;
 
+/* mixin */
+@mixin resetMarginPadding() {
+  margin: 0;
+  padding: 0;
+}
 /*
 * Style Header
 */
 body {
-    font-family: $font-family-thefox;
-    font-size: $font-size-small;
+  font-family: $font-family-thefox;
+  font-size: $font-size-small;
 }
 .top {
   height: $height-top;
@@ -48,9 +62,7 @@ body {
       position: relative;
       width: 155px;
       background-color: $color-blue-blood;
-    //   opacity: 0;
-    //   transition: 0.2s;
-    //   visibility: hidden;
+      z-index: 10;
 
       a {
         display: block;
@@ -64,45 +76,144 @@ body {
     }
   }
   /* End top languages */
+
   /* Right */
   .right {
-      .button {
-        display: inline;
-        a.btn {
-            font-size: $font-size-small;
-            color: $color-2;
-            background-color:$color-button;
-            height: 30px;
-            padding: auto 11px;
-            border: none;
-            text-transform: uppercase;
-            font-weight: bold;
-            margin-right: 15px;
+    .button {
+      display: inline;
+      a.btn {
+        font-size: $font-size-small;
+        color: $color-2;
+        background-color: $color-button;
+        height: 30px;
+        padding: auto 11px;
+        border: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-right: 15px;
 
-            i {
-                padding-right: 7px;
-            }
+        i {
+          padding-right: 7px;
         }
       }
-      .links {
+    }
+    .links {
+      display: inline;
+
+      ul {
+        display: inline;
+
+        li {
           display: inline;
+          list-style: none;
 
-          ul {
-              display: inline;
-
-              li {
-                  display: inline;
-                  list-style: none;
-
-                  a {
-                      color: $color-2;
-                      font-size: $font-size-small;
-                      padding-right: 15px;
-                  }
-              }
+          a {
+            color: $color-2;
+            font-size: $font-size-small;
+            padding-right: 15px;
           }
+        }
       }
+    }
   }
 }
 
-@import 'mobile';
+/* Menu & Logo */
+.menuandlogo {
+  height: $logo-height;
+  line-height: $logo-height;
+
+  .menu-top {
+    @include resetMarginPadding();
+
+    a.navbar-brand {
+      @include resetMarginPadding();
+    }
+
+    .form-search {
+      i {
+        font-size: $font-size-menu;
+      }
+    }
+
+    ul.menu-right {
+      li.nav-item {
+        a.nav-link {
+          @include resetMarginPadding();
+          font-size: $font-size-menu;
+          padding-left: 26px;
+          padding-right: 26px;
+          text-transform: uppercase;
+          font-weight: 900;
+          color: $color-blue-blood;
+        }
+      }
+    }
+  }
+}
+/* End Menu & Logo */
+
+/* Title  */
+.title {
+  height: $height-title;
+  line-height: $height-title;
+  background-color: $color-background-gray;
+
+  .left {
+    h2 {
+      height: $height-title;
+      line-height: $height-title;
+      font-size: $font-size-title;
+      color: $color-blue-blood;
+
+      a {
+        i {
+          background-color: white;
+          border: 1px solid $color-border;
+          border-radius: 3px;
+          display: inline-block;
+          padding: 5px;
+          height: 30px;
+          width: 30px;
+          color: $color-light;
+          font-size: $font-size-medium;
+          text-align: center;
+          line-height: 30px;
+          &:before { 
+            position: relative;
+            top: -5px;
+          }
+        }
+      }
+    }
+  }
+  .right {
+    .breadcrumb {
+      @include resetMarginPadding();
+      background-color: transparent;
+
+      .breadcrumb-item {
+        font-size: $font-size-medium;
+        color: $color-light;
+        
+        &:first-child:before {
+          content: "";
+        }
+
+        &:before {
+          display: inline-block;
+          padding-right: 0.5rem;
+          padding-left: 0.5rem;
+          color: #818a91;
+          content: "\f105";
+          font: normal normal normal 14px/1 FontAwesome;
+          font-size: inherit;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+        }
+      }
+    }
+  }
+}
+
+@import "mobile";

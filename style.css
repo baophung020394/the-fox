@@ -1,7 +1,9 @@
 /* Define Font-Family, Font-size, Color */
+/* Logo */
 /* Color */
 /* Font */
 /* Height & Width */
+/* mixin */
 /*
 * Style Header
 */
@@ -27,7 +29,8 @@ body {
     .top-language .languages {
       position: relative;
       width: 155px;
-      background-color: #2c3e50; }
+      background-color: #2c3e50;
+      z-index: 10; }
       .top-language .languages a {
         display: block;
         padding: 3px 12px;
@@ -62,6 +65,74 @@ body {
           font-size: 13px;
           padding-right: 15px; }
 
+/* Menu & Logo */
+.menuandlogo {
+  height: 90px;
+  line-height: 90px; }
+  .menuandlogo .menu-top {
+    margin: 0;
+    padding: 0; }
+    .menuandlogo .menu-top a.navbar-brand {
+      margin: 0;
+      padding: 0; }
+    .menuandlogo .menu-top .form-search i {
+      font-size: 15px; }
+    .menuandlogo .menu-top ul.menu-right li.nav-item a.nav-link {
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+      padding-left: 26px;
+      padding-right: 26px;
+      text-transform: uppercase;
+      font-weight: 900;
+      color: #2c3e50; }
+
+/* End Menu & Logo */
+/* Title  */
+.title {
+  height: 120px;
+  line-height: 120px;
+  background-color: #f9fafb; }
+  .title .left h2 {
+    height: 120px;
+    line-height: 120px;
+    font-size: 30px;
+    color: #2c3e50; }
+    .title .left h2 a i {
+      background-color: white;
+      border: 1px solid #eff0f1;
+      border-radius: 3px;
+      display: inline-block;
+      padding: 5px;
+      height: 30px;
+      width: 30px;
+      color: #a1b1bc;
+      font-size: 14px;
+      text-align: center;
+      line-height: 30px; }
+      .title .left h2 a i:before {
+        position: relative;
+        top: -5px; }
+  .title .right .breadcrumb {
+    margin: 0;
+    padding: 0;
+    background-color: transparent; }
+    .title .right .breadcrumb .breadcrumb-item {
+      font-size: 14px;
+      color: #a1b1bc; }
+      .title .right .breadcrumb .breadcrumb-item:first-child:before {
+        content: ""; }
+      .title .right .breadcrumb .breadcrumb-item:before {
+        display: inline-block;
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+        color: #818a91;
+        content: "\f105";
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased; }
+
 @media (max-width: 576px) {
   /* Top Header */
   .top {
@@ -73,6 +144,15 @@ body {
       opacity: 1;
       width: 100%; }
       .top-language .languages a {
-        color: #ffffff; } }
+        color: #ffffff; }
+
+  /* Menu & Logo */
+  .menuandlogo .menu-top {
+    padding: 10px 0; }
+    .menuandlogo .menu-top .form-search {
+      line-height: 26px; }
+    .menuandlogo .menu-top .menu-right li.nav-item a.nav-link {
+      line-height: 35px;
+      border-bottom: 1px dashed #cfcfcf; } }
 
 /*# sourceMappingURL=style.css.map */

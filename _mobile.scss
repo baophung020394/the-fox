@@ -17,4 +17,25 @@
             }
         }
     }
+
+    /* Menu & Logo */
+    .menuandlogo {
+        .menu-top {
+            padding: 10px 0;
+            
+            .form-search {
+                line-height: 26px;
+            }
+            .menu-right {
+                li.nav-item {
+                    a.nav-link {
+                        line-height: 35px;
+                        border-bottom: 1px dashed #cfcfcf;
+                    }
+                }
+            }
+        }
+
+        
+    } 
 }
